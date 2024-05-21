@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import {CategoryCard} from "../component/CategoryCard";
-import LivingImg from "../assets/living.png";
-import DiningImg from "../assets/dining.png";
-import Bedroom from "../assets/bedroom.png";
 
 const backendUrl = "https://ecommerce-backend-fawn-eight.vercel.app/api/categories";
-
-const images = {
-  "living.png": LivingImg,
-  "dining.png": DiningImg,
-  "bedroom.png": Bedroom,
-};
 
 
 export default function Categories() {

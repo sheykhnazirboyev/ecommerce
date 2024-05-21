@@ -12,7 +12,7 @@ const GeneralLayout = () => {
     if (!token) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate]);
   
   return (
     <div className="max-w-[1140px] mx-auto">
