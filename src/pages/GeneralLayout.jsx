@@ -1,16 +1,26 @@
-import React, { Component } from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { useNavigate } from "react-router-dom";
 import { Outlet } from "react-router";
+import { useEffect } from "react";
 
-export default class GeneralLayout extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </div>
-    );
-  }
-}
+const GeneralLayout = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("auth-token");
+    if (!token) {
+      navigate("/login");
+    }
+  }, []);
+  
+  return (
+    <div className="max-w-[1140px] mx-auto">
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
+
+export default GeneralLayout;
